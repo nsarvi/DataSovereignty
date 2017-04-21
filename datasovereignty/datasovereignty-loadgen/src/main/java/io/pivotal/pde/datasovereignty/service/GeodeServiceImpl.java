@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.client.ClientCache;
 import org.apache.geode.cache.client.ClientCacheFactory;
+import org.apache.geode.pdx.ReflectionBasedAutoSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,8 @@ public class GeodeServiceImpl implements IGeodeService {
 		logger.info("Loading the geode client cache file");
 	    cache = new ClientCacheFactory()
 	      .set("cache-xml-file", "client/geode-client-cache.xml")
-	      .setPdxReadSerialized(true)
+	      .setPdxReadSerialized(false)
+	      .setPdxSerializer(new ReflectionBasedAutoSerializer("io.pivotal.pde.datasovereignty.model.*"))
 	      .create();
 	    region=cache.getRegion("unrestricted");	
 	}

@@ -1,15 +1,7 @@
 package io.pivotal.pde.datasovereignty.model;
 
-import java.io.Serializable;
 import java.util.Date;
-
-
-public class Unrestricted implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7526471155622776147L;
+public class Unrestricted {
 
 	private Integer orderNumber;
 	private Date orderDate;
@@ -55,7 +47,58 @@ public class Unrestricted implements Serializable {
 	public void setTotalPrice(float totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((customerNumber == null) ? 0 : customerNumber.hashCode());
+		result = prime * result + ((orderDate == null) ? 0 : orderDate.hashCode());
+		result = prime * result + ((orderNumber == null) ? 0 : orderNumber.hashCode());
+		result = prime * result + ((shipDate == null) ? 0 : shipDate.hashCode());
+		result = prime * result + Float.floatToIntBits(shippingCost);
+		result = prime * result + Float.floatToIntBits(totalPrice);
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Unrestricted other = (Unrestricted) obj;
+		if (customerNumber == null) {
+			if (other.customerNumber != null)
+				return false;
+		} else if (!customerNumber.equals(other.customerNumber))
+			return false;
+		if (orderDate == null) {
+			if (other.orderDate != null)
+				return false;
+		} else if (!orderDate.equals(other.orderDate))
+			return false;
+		if (orderNumber == null) {
+			if (other.orderNumber != null)
+				return false;
+		} else if (!orderNumber.equals(other.orderNumber))
+			return false;
+		if (shipDate == null) {
+			if (other.shipDate != null)
+				return false;
+		} else if (!shipDate.equals(other.shipDate))
+			return false;
+		if (Float.floatToIntBits(shippingCost) != Float.floatToIntBits(other.shippingCost))
+			return false;
+		if (Float.floatToIntBits(totalPrice) != Float.floatToIntBits(other.totalPrice))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Unrestricted [orderNumber=" + orderNumber + ", orderDate=" + orderDate + ", shippingCost="
+				+ shippingCost + ", shipDate=" + shipDate + ", customerNumber=" + customerNumber + ", totalPrice="
+				+ totalPrice + "]";
+	}
 	
-	
- 
 }

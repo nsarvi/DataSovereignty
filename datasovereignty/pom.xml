@@ -37,21 +37,6 @@
 		</dependency>
 	</dependencies>
 
-<dependencyManagement>
-	<dependencies>
-		<dependency>
-		 <groupId>io.pivotal.pde</groupId>  
-		  <artifactId>datasovereignty-model</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	
-		<dependency>
-		  <groupId>io.pivotal.pde</groupId>  
-		  <artifactId>datasovereignty-loadgen</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
-		 </dependency>
-	 </dependencies>
-</dependencyManagement>
 
 <modules>
 <module>datasovereignty-model</module>

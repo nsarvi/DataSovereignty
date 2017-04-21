@@ -7,7 +7,7 @@
     
      <!--  GCP gemfire instance  -->
     <pool name="geodeCluster">
-	  	<locator host="35.188.29.115" port="10334"/>
+	  	<locator host="localhost" port="10334"/>
 	</pool>	
     
   <!--  customer has defined at server side  -->
@@ -15,6 +15,5 @@
   	<region name="unrestricted" refid="PROXY"/>
 	
 	<region name="localRegion" refid="LOCAL"/>
-	
   
 </client-cache>

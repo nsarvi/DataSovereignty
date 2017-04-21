@@ -3,7 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
  
   <artifactId>datasovereignty-loadgen</artifactId>
-  <packaging>jar</packaging>
 
   <name>datasovereignty-loadgen</name>
   <url>http://maven.apache.org</url>
@@ -38,7 +37,7 @@
   
   <dependency>
   	<groupId>io.pivotal.pde</groupId>
-  	<artifactId>DataSovereigntyModel</artifactId>
+  	<artifactId>datasovereignty-model</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </dependency>
   <!-- spring boot  -->
@@ -61,23 +60,7 @@
       <artifactId>geode-wan</artifactId>
       <version>9.0.0</version>
    </dependency>
-   <dependency>
-      <groupId>io.pivotal.gemfire</groupId>
-      <artifactId>geode-cq</artifactId>
-      <version>9.0.0</version>
-   </dependency>
-   
-   <dependency>
-            <groupId>org.apache.avro</groupId>
-            <artifactId>avro</artifactId>
-            <version>1.8.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.avro</groupId>
-            <artifactId>avro-compiler</artifactId>
-            <version>1.8.0</version>
-        </dependency>
-        
+           
   <!--  
    
 <dependency>
