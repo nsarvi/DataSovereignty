@@ -1,0 +1,139 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <artifactId>datasovereignty-loadgen</artifactId>
+  <packaging>jar</packaging>
+
+  <name>datasovereignty-loadgen</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <parent>
+    <groupId>io.pivotal.pde</groupId>
+    <artifactId>datasovereignty-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+<repositories>
+	
+	<repository>
+       <id>gemfire-release-repo</id>
+       <name>Pivotal GemFire Release Repository</name>
+       <url>https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire</url>
+   </repository>
+   
+	<repository>
+	    <id>spring-gemstone-releases</id>
+	    <url>http://repo.spring.io/gemstone-release-cache/</url>
+	  </repository>
+  
+</repositories>
+
+
+  <dependencies>
+  
+  <dependency>
+  	<groupId>io.pivotal.pde</groupId>
+  	<artifactId>DataSovereigntyModel</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  <!-- spring boot  -->
+  
+	<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>      
+    </dependency>
+
+  
+  <!--  added for geode 9.0-->
+  
+  <dependency>
+      <groupId>io.pivotal.gemfire</groupId>
+      <artifactId>geode-core</artifactId>
+      <version>9.0.0</version>
+   </dependency>
+   <dependency>
+      <groupId>io.pivotal.gemfire</groupId>
+      <artifactId>geode-wan</artifactId>
+      <version>9.0.0</version>
+   </dependency>
+   <dependency>
+      <groupId>io.pivotal.gemfire</groupId>
+      <artifactId>geode-cq</artifactId>
+      <version>9.0.0</version>
+   </dependency>
+   
+   <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-compiler</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        
+  <!--  
+   
+<dependency>
+    <groupId>org.apache.geode</groupId>
+    <artifactId>geode-core</artifactId>
+    <version>1.1.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.geode</groupId>
+    <artifactId>geode-common</artifactId>
+    <version>1.1.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.geode</groupId>
+    <artifactId>geode-modules</artifactId>
+    <version>1.1.0</version>
+</dependency>
+
+-->
+	    <dependency>
+	        <groupId>org.springframework.data</groupId>
+	        <artifactId>spring-data-gemfire</artifactId>
+	        <version>1.9.1.RELEASE</version>
+	    </dependency>
+	    
+	 <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-jpa</artifactId>
+        <version>1.9.2.RELEASE</version>
+    </dependency>
+	
+	 <dependency>
+        <groupId>org.hibernate.javax.persistence</groupId>
+        <artifactId>hibernate-jpa-2.0-api</artifactId>
+        <version>1.0.1.Final</version>
+    </dependency>
+    
+ 
+ 
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+  	<finalName>datasovereignty-load</finalName>
+  	<plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+  </build>
+</project>

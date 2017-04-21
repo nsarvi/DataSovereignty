@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client-cache
+    xmlns="http://geode.apache.org/schema/cache"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
+    version="1.0">
+    
+     <!--  GCP gemfire instance  -->
+    <pool name="geodeCluster">
+	  	<locator host="35.188.29.115" port="10334"/>
+	</pool>	
+    
+  <!--  customer has defined at server side  -->
+  
+  	<region name="unrestricted" refid="PROXY"/>
+	
+	<region name="localRegion" refid="LOCAL"/>
+	
+  
+</client-cache>
